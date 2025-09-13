@@ -1248,6 +1248,10 @@ section {
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* 🔥 NEW: Make cards equal height and flex container */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -1259,6 +1263,8 @@ section {
     height: 200px;
     overflow: hidden;
     position: relative;
+    /* 🔥 NEW: Prevent image from shrinking */
+    flex-shrink: 0;
 }
 
 .project-image img {
@@ -1274,6 +1280,10 @@ section {
 
 .project-content {
     padding: 2rem;
+    /* 🔥 NEW: Make content area flexible */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-title {
@@ -1287,6 +1297,8 @@ section {
     color: #d1d5db;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    /* 🔥 NEW: Allow description to grow and fill space */
+    flex-grow: 1;
 }
 
 .project-tech {
@@ -1294,6 +1306,8 @@ section {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 2rem;
+    /* 🔥 NEW: Prevent tech tags from growing */
+    flex-shrink: 0;
 }
 
 .tech-tag {
@@ -1308,11 +1322,17 @@ section {
 .project-buttons {
     display: flex;
     gap: 1rem;
+    /* 🔥 NEW: Push buttons to bottom */
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 .project-buttons .btn {
     flex: 1;
     justify-content: center;
+    /* 🔥 NEW: Center text in buttons */
+    text-align: center;
+    padding: 0.75rem 1rem;
 }
 
 /* Education Section */
